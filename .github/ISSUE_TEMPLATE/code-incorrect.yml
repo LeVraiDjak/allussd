@@ -1,0 +1,68 @@
+name: Un code ne marche pas
+description: Un code affiché dans l'application ne fait pas ce qui est annoncé.
+title: "[Code] "
+labels: ["code-incorrect"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Un rappel avant de commencer : **cette page est publique**. N'y mettez pas votre
+        numéro de téléphone ni quoi que ce soit de personnel — le pays, l'opérateur et le code suffisent.
+
+        Un code qui coûte de l'argent (achat de forfait, transfert) : **arrêtez-vous au premier écran**,
+        n'allez pas jusqu'à la validation.
+  - type: input
+    id: pays
+    attributes:
+      label: Pays
+      description: Le pays où vous avez composé le code.
+      placeholder: Côte d'Ivoire
+    validations:
+      required: true
+  - type: input
+    id: operateur
+    attributes:
+      label: Opérateur
+      placeholder: Orange CI
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Le code tel qu'il apparaît dans l'application
+      placeholder: "#124*68#"
+    validations:
+      required: true
+  - type: dropdown
+    id: resultat
+    attributes:
+      label: Que se passe-t-il quand vous le composez ?
+      options:
+        - "B — Un message d'erreur s'affiche"
+        - "C — Il ne se passe rien du tout"
+        - "D — Ça marche, mais ça n'affiche pas ce qui est annoncé"
+        - "A — Ça marche comme annoncé (je signale autre chose)"
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: Détail
+      description: >
+        Le plus utile de tout. Recopiez le message d'erreur exact, ou décrivez l'écran obtenu
+        (« ça ouvre le menu Orange Money au lieu du solde »). Une capture d'écran est parfaite.
+      placeholder: "Message affiché : « Service momentanément indisponible »"
+    validations:
+      required: true
+  - type: input
+    id: correction
+    attributes:
+      label: Vous connaissez le bon code ? (facultatif)
+      description: Si vous savez quel code fait vraiment ce qui est annoncé, indiquez-le.
+      placeholder: "#124*68#"
+  - type: input
+    id: dataset-id
+    attributes:
+      label: Identifiant du code (facultatif)
+      description: Affiché en bas de la fiche du code dans l'application.
+      placeholder: ci.orange.call-me-back

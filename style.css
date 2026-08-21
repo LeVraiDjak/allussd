@@ -1,0 +1,99 @@
+/* Shared by every page of the site. Same palette as the app's green identity. */
+:root {
+  --bg: #F5F8F6;
+  --card: #FFFFFF;
+  --text: #151B18;
+  --subtext: #5B6660;
+  --primary: #0B7A55;
+  --border: #E2E8E4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0D1311;
+    --card: #171F1B;
+    --text: #EAF1ED;
+    --subtext: #98A49E;
+    --primary: #3BC48D;
+    --border: #26312B;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: block;
+}
+h1 { font-size: 22px; margin: 0; }
+.updated { color: var(--subtext); font-size: 13px; margin: 0 0 28px; }
+h2 { font-size: 16px; margin: 28px 0 8px; color: var(--primary); }
+p, li { font-size: 15px; }
+ul { padding-left: 20px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+a { color: var(--primary); }
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--subtext);
+  font-size: 12.5px;
+}
+
+/* Landing page only. */
+.lede { font-size: 17px; color: var(--subtext); margin: 0 0 24px; }
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.stats li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+.stats b { color: var(--primary); font-size: 18px; display: block; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+.actions a {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  text-decoration: none;
+  font-size: 15px;
+}
+.actions a.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}

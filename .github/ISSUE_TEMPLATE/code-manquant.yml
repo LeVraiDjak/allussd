@@ -1,0 +1,75 @@
+name: Proposer un code manquant
+description: Vous connaissez un code utile qui n'est pas dans l'application.
+title: "[Ajout] "
+labels: ["code-manquant"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Les codes venus de gens sur place valent mieux que n'importe quelle recherche en ligne.
+
+        Rappel : **cette page est publique**, ne mettez pas votre numéro de téléphone.
+        Vous pouvez proposer plusieurs codes d'un coup dans le champ « Autres codes » en bas.
+  - type: input
+    id: pays
+    attributes:
+      label: Pays
+      placeholder: Cameroun
+    validations:
+      required: true
+  - type: input
+    id: operateur
+    attributes:
+      label: Opérateur
+      description: Si le code marche sur tous les opérateurs du pays, écrivez-le.
+      placeholder: MTN Cameroun
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Le code
+      placeholder: "*123*99#"
+    validations:
+      required: true
+  - type: textarea
+    id: usage
+    attributes:
+      label: Ce que ça fait
+      placeholder: Affiche ce qu'il reste sur les forfaits en cours (internet, minutes, SMS).
+    validations:
+      required: true
+  - type: dropdown
+    id: categorie
+    attributes:
+      label: Catégorie
+      options:
+        - Solde & compte
+        - Forfaits internet / data
+        - Appels
+        - Mobile money / paiement
+        - Transfert de crédit
+        - Réseau
+        - Téléphone / appareil
+        - Service client
+        - Je ne sais pas
+    validations:
+      required: true
+  - type: dropdown
+    id: teste
+    attributes:
+      label: Vous l'avez composé vous-même sur votre téléphone ?
+      description: Un code jamais testé reste utile — il sera simplement marqué « non vérifié » en attendant.
+      options:
+        - "Oui, il marche"
+        - "Non, je le connais mais je ne l'ai pas testé récemment"
+    validations:
+      required: true
+  - type: textarea
+    id: autres
+    attributes:
+      label: Autres codes (facultatif)
+      description: Un code par ligne, avec ce qu'il fait. Même ceux dont vous n'êtes pas sûr.
+      placeholder: |
+        *141# — connaître son numéro
+        *121# — emprunter du crédit

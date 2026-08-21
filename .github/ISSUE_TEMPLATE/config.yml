@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Signaler un code par e-mail (sans compte GitHub)
+    url: mailto:levraidev@gmail.com
+    about: Précisez le pays, l'opérateur, le code, et ce qui se passe quand vous le composez.
