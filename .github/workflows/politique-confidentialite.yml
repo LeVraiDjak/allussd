@@ -1,0 +1,75 @@
+# La politique de confidentialité existe en deux fichiers, français et anglais.
+# Le risque de cette approche est qu'on en modifie un et pas l'autre : les deux
+# textes divergent alors sans que rien ne le signale, sur un document juridique
+# publié. Ce contrôle transforme cette discipline en échec visible.
+#
+# Il ne relit pas les traductions et n'en juge pas la justesse. Il vérifie deux
+# choses mécaniques, et rien d'autre — un contrôle qui produit de fausses
+# alertes finit ignoré, puis désactivé.
+name: Politique de confidentialité
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deux-versions-alignees:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Attrape le cas « j'ai bien touché aux deux fichiers, mais l'un n'a pas
+      # vraiment été mis à jour » : la version affichée dans les deux doit être
+      # la même.
+      - name: Même policy-version des deux côtés
+        run: |
+          version() {
+            sed -n 's/.*name="policy-version" content="\([^"]*\)".*/\1/p' "$1" | head -1
+          }
+          fr=$(version privacy/index.html)
+          en=$(version en/privacy/index.html)
+          if [ -z "$fr" ] || [ -z "$en" ]; then
+            echo "::error::Marqueur <meta name=\"policy-version\"> absent (fr='$fr' en='$en'). Il doit figurer dans les deux fichiers."
+            exit 1
+          fi
+          if [ "$fr" != "$en" ]; then
+            echo "::error::Les deux versions de la politique annoncent des dates différentes : fr=$fr, en=$en. Mettez les deux à jour, marqueur et date affichée."
+            exit 1
+          fi
+          echo "policy-version identique des deux côtés : $fr"
+
+      # Attrape le cas plus courant : on corrige une phrase d'un côté et on
+      # oublie l'autre, sans toucher au marqueur.
+      - name: Les deux fichiers changent ensemble
+        env:
+          # Passés par l'environnement plutôt qu'interpolés dans le script :
+          # du contenu contrôlé par l'événement n'a pas à être collé dans un shell.
+          BASE_PUSH: ${{ github.event.before }}
+          BASE_PR: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.sha }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT" = "pull_request" ]; then base="$BASE_PR"; else base="$BASE_PUSH"; fi
+          if [ "$EVENT" = "workflow_dispatch" ] || [ -z "$base" ] || [ "$base" = "0000000000000000000000000000000000000000" ]; then
+            echo "Pas de point de comparaison (premier push, force-push ou lancement manuel) : rien à comparer."
+            exit 0
+          fi
+          if ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+            echo "Commit de base $base introuvable dans l'historique récupéré : rien à comparer."
+            exit 0
+          fi
+          changed=$(git diff --name-only "$base" "$HEAD_SHA")
+          fr=$(printf '%s\n' "$changed" | grep -Fxc 'privacy/index.html' || true)
+          en=$(printf '%s\n' "$changed" | grep -Fxc 'en/privacy/index.html' || true)
+          if [ "$fr" != "$en" ]; then
+            echo "::error::Une seule des deux versions de la politique a changé (fr=$fr, en=$en). Les deux se modifient ensemble, sinon les textes divergent."
+            exit 1
+          fi
+          echo "Versions modifiées de façon cohérente (fr=$fr, en=$en)."
