@@ -5,6 +5,7 @@
   --text: #151B18;
   --subtext: #5B6660;
   --primary: #0B7A55;
+  --on-primary: #FFFFFF;
   --border: #E2E8E4;
 }
 @media (prefers-color-scheme: dark) {
@@ -14,6 +15,9 @@
     --text: #EAF1ED;
     --subtext: #98A49E;
     --primary: #3BC48D;
+    /* Le vert clair du thème sombre est trop lumineux pour du texte blanc
+       (2,2:1). Texte sombre dessus : 8,5:1. */
+    --on-primary: #0D1311;
     --border: #26312B;
   }
 }
@@ -95,5 +99,6 @@ footer {
 .actions a.primary {
   background: var(--primary);
   border-color: var(--primary);
-  color: #fff;
+  color: var(--on-primary);
+  font-weight: 600;
 }
