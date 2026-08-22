@@ -102,3 +102,13 @@ footer {
   color: var(--on-primary);
   font-weight: 600;
 }
+
+/* Language switcher, top-right of the header. Two files per page (fr, en) and
+   the browser's own translation for everything else — no third-party widget,
+   which on a privacy page would be its own contradiction. */
+.langswitch {
+  margin-left: auto;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.translate-note { font-size: 12px; margin-top: 6px; }
