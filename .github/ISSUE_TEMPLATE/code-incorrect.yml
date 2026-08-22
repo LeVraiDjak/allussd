@@ -34,6 +34,20 @@ body:
     validations:
       required: true
   - type: dropdown
+    id: reessaye
+    attributes:
+      label: Avez-vous réessayé plus tard ?
+      description: >
+        Un code peut échouer parce que le réseau est momentanément indisponible, puis fonctionner sans
+        rien changer. Le message d'erreur du téléphone ne fait pas la différence entre un code invalide
+        et une panne passagère — c'est la cause n°1 des signalements qui font retirer un code que
+        d'autres utilisent tous les jours.
+      options:
+        - "Oui, il échoue à plusieurs reprises, à des moments différents"
+        - "Non, je ne l'ai essayé qu'une fois"
+    validations:
+      required: true
+  - type: dropdown
     id: resultat
     attributes:
       label: Que se passe-t-il quand vous le composez ?
