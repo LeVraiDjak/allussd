@@ -1,0 +1,69 @@
+name: Un numéro d'urgence est faux, obsolète ou manquant
+description: Police, gendarmerie, pompiers, SAMU... signalez un numéro à corriger ou un service absent.
+title: "[Urgence] "
+labels: ["numero-urgence"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Un rappel avant de commencer : **cette page est publique**. N'y mettez pas votre
+        numéro de téléphone personnel — le pays, le service et le numéro concerné suffisent.
+
+        Ces numéros peuvent servir dans l'urgence : si vous avez un doute, préférez une source
+        officielle (site du gouvernement, de l'opérateur) à un souvenir approximatif.
+  - type: input
+    id: pays
+    attributes:
+      label: Pays
+      placeholder: Côte d'Ivoire
+    validations:
+      required: true
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service concerné
+      options:
+        - Police
+        - Gendarmerie
+        - Pompiers
+        - SAMU / secours médical
+        - Autre service, absent de la liste
+    validations:
+      required: true
+  - type: input
+    id: numero
+    attributes:
+      label: Le numéro tel qu'il apparaît dans l'application
+      description: Laissez vide si le service manque entièrement de la liste.
+      placeholder: "180"
+  - type: dropdown
+    id: probleme
+    attributes:
+      label: Qu'est-ce qui ne va pas ?
+      options:
+        - "Le numéro ne fonctionne pas, ou tombe sur quelqu'un d'autre"
+        - "Le numéro a changé"
+        - "Un service manque entièrement dans la liste"
+        - Autre
+    validations:
+      required: true
+  - type: input
+    id: correction
+    attributes:
+      label: Numéro correct, si vous le connaissez (facultatif)
+      placeholder: "110"
+  - type: textarea
+    id: source
+    attributes:
+      label: Comment le savez-vous ?
+      description: >
+        Une source officielle (site du gouvernement, de l'opérateur téléphonique) compte plus qu'un
+        souvenir approximatif. L'avoir composé vous-même récemment compte aussi.
+      placeholder: "Site officiel du ministère de l'Intérieur, consulté le ..."
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: Détail (facultatif)
+      description: Tout ce qui peut aider — capture d'écran, contexte, lien vers une source.
