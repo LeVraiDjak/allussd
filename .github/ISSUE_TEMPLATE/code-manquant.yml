@@ -59,6 +59,7 @@ body:
         - Réseau
         - Téléphone / appareil
         - Service client
+        - Divers
         - Je ne sais pas
     validations:
       required: true
