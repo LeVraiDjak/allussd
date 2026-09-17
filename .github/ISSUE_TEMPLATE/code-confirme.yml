@@ -1,0 +1,83 @@
+name: Un code marche (le confirmer)
+description: Un code marqué « non vérifié » dans l'application fait bien ce qui est annoncé.
+title: "[Confirmé] "
+labels: ["code-confirme"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! « Non vérifié » ne veut pas dire « cassé » : ça veut dire que **personne n'a encore pu
+        composer ce code sur place**, avec une SIM de cet opérateur. Votre confirmation est ce qui permet
+        de retirer la mention pour tout le monde.
+
+        Un rappel avant de commencer : **cette page est publique**. N'y mettez pas votre numéro de
+        téléphone ni quoi que ce soit de personnel — le pays, l'opérateur et le code suffisent.
+
+        Un code qui coûte de l'argent (achat de forfait, transfert) : **arrêtez-vous au premier écran**,
+        n'allez pas jusqu'à la validation. Voir le premier écran suffit à confirmer que le code ouvre le
+        bon service.
+  - type: input
+    id: pays
+    attributes:
+      label: Pays
+      description: Le pays où vous avez composé le code, avec une SIM locale.
+      placeholder: Côte d'Ivoire
+    validations:
+      required: true
+  - type: input
+    id: operateur
+    attributes:
+      label: Opérateur
+      placeholder: Orange CI
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Le code tel qu'il apparaît dans l'application
+      placeholder: "#124*68#"
+    validations:
+      required: true
+  - type: dropdown
+    id: sur-place
+    attributes:
+      label: Où étiez-vous quand vous l'avez composé ?
+      description: >
+        Un code composé depuis un autre pays, ou sur l'opérateur d'à côté, ne dit rien de celui-ci :
+        c'est la raison d'être de cette question.
+      options:
+        - "Dans le pays, avec une SIM de cet opérateur"
+        - "Dans le pays, mais avec une SIM d'un autre opérateur"
+        - "Depuis un autre pays (en roaming)"
+    validations:
+      required: true
+  - type: dropdown
+    id: resultat
+    attributes:
+      label: Qu'avez-vous obtenu ?
+      options:
+        - "A — Le menu ou l'information annoncée s'affiche"
+        - "A — Ça marche, mais le nom ou la description mériterait d'être précisé (dites-le en dessous)"
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: Ce que vous avez vu (facultatif, mais très utile)
+      description: >
+        La première ligne de l'écran obtenu, ou une capture. C'est ce qui permet de vérifier que le code
+        ouvre bien le service annoncé et pas un menu voisin.
+      placeholder: "Écran obtenu : « Votre solde est de 1 250 FCFA »"
+  - type: input
+    id: dataset-id
+    attributes:
+      label: Identifiant du code (facultatif)
+      description: Affiché en bas de la fiche du code dans l'application.
+      placeholder: ci.orange.balance
+  - type: markdown
+    attributes:
+      value: |
+        **Ce qui se passe ensuite** : la mention « non vérifié » est retirée quand **deux confirmations
+        indépendantes** arrivent, ou quand une confirmation rejoint une source officielle de l'opérateur.
+        Une seule personne, une seule fois, ne suffit pas — c'est la même règle qui empêche de retirer un
+        code sur un seul signalement d'échec.

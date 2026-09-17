@@ -24,7 +24,7 @@
   <p>Consulter son solde, acheter un forfait, connaître son numéro, envoyer de l'argent : chaque opérateur a ses codes, et personne ne les retient tous. All USSD les rassemble par pays et par opérateur, les rend cherchables, et les compose en un tap — l'application ouvre le composeur du téléphone avec le code déjà saisi, vous appuyez vous-même sur Appeler.</p>
 
   <ul class="stats">
-    <li><b>22</b> langues d'interface</li>
+    <li><b>21</b> langues d'interface</li>
     <li><b>100 %</b> hors-ligne</li>
     <li><b>0</b> permission demandée</li>
     <li><b>0</b> compte à créer</li>
@@ -43,7 +43,8 @@
   <p>Les codes opérateur changent, et aucune source en ligne n'est fiable partout. Chaque code de l'application est soit confirmé sur un vrai téléphone, soit marqué « non vérifié » en attendant de l'être. <strong>C'est là que vous pouvez aider</strong> — deux minutes suffisent :</p>
 
   <div class="actions">
-    <a class="primary" href="https://github.com/LeVraiDjak/allussd/issues/new?template=code-incorrect.yml">Un code ne marche pas</a>
+    <a class="primary" href="https://github.com/LeVraiDjak/allussd/issues/new?template=code-confirme.yml">Un code marche : le confirmer</a>
+    <a href="https://github.com/LeVraiDjak/allussd/issues/new?template=code-incorrect.yml">Un code ne marche pas</a>
     <a href="https://github.com/LeVraiDjak/allussd/issues/new?template=code-manquant.yml">Proposer un code manquant</a>
     <a href="https://github.com/LeVraiDjak/allussd/issues/new?template=numero-urgence.yml">Un numéro d'urgence est faux ou manquant</a>
   </div>
@@ -51,6 +52,21 @@
   <p><small>Un signalement ouvert sur GitHub est <strong>public</strong> : n'y mettez pas votre numéro de téléphone ni quoi que ce soit de personnel — le pays, l'opérateur (ou le service) et le code (ou le numéro) suffisent.</small></p>
 
   <p>Aucun compte GitHub ? Écrivez simplement à <a href="mailto:levraidev@gmail.com">levraidev@gmail.com</a>, en précisant le pays, l'opérateur ou le service, le code ou le numéro, et ce que vous avez constaté.</p>
+
+  <h2 id="non-verifie">« Non vérifié » ne veut pas dire « cassé »</h2>
+
+  <p>Un code porte cette mention pour une seule raison : <strong>personne n'a encore pu le composer sur place</strong>, dans ce pays, avec une SIM de cet opérateur. Il vient d'une source publique — page officielle de l'opérateur, documentation, recoupements — et il marche peut-être très bien. La mention dit ce que nous savons, pas ce que vaut le code.</p>
+
+  <p>Elle ne disparaît que d'une façon : quelqu'un sur place compose le code et nous dit ce qu'il a obtenu. Composer un code ne coûte rien et les codes qui prélèvent de l'argent s'arrêtent au premier écran, qui suffit à confirmer que le bon service s'ouvre.</p>
+
+  <ul>
+    <li><strong>Ça marche</strong> — la fiche du code porte le bouton « Ce code marche » ; il envoie un e-mail prérempli ou ouvre le formulaire ci-dessus.</li>
+    <li><strong>Ça ne marche pas</strong> — le bouton « Signaler ce code », qui demande d'abord ce qui s'est passé. Réessayez plus tard avant de signaler : un code peut échouer parce que le réseau est momentanément indisponible, et le message d'erreur du téléphone ne fait pas la différence.</li>
+  </ul>
+
+  <p>La mention est retirée quand <strong>deux confirmations indépendantes</strong> arrivent, ou quand une confirmation rejoint une source officielle de l'opérateur. Une seule personne, une seule fois, ne suffit pas — dans un sens comme dans l'autre.</p>
+
+  <p><strong>Vous participez au test fermé ?</strong> C'est la contribution la plus utile : dans votre pays, ouvrez les codes marqués « non vérifié » et tranchez-les un par un. Ce sont ceux dont personne ne connaît encore l'état.</p>
 
   <h2>Disponibilité</h2>
   <p>Android : publication sur Google Play en préparation. Une version iOS est prévue.</p>

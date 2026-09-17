@@ -12,6 +12,7 @@ Ce dépôt sert au site de l'application et au signalement des codes et numéros
 Les codes opérateur changent d'un pays et d'un opérateur à l'autre, et aucune source en ligne n'est
 fiable partout. Les retours de personnes sur place sont ce qui rend l'application juste.
 
+- [Un code marche : le confirmer](https://github.com/LeVraiDjak/allussd/issues/new?template=code-confirme.yml)
 - [Un code ne marche pas](https://github.com/LeVraiDjak/allussd/issues/new?template=code-incorrect.yml)
 - [Proposer un code manquant](https://github.com/LeVraiDjak/allussd/issues/new?template=code-manquant.yml)
 - [Un numéro d'urgence est faux ou manquant](https://github.com/LeVraiDjak/allussd/issues/new?template=numero-urgence.yml)
