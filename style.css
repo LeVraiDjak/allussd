@@ -70,22 +70,6 @@ footer {
 
 /* Landing page only. */
 .lede { font-size: 17px; color: var(--subtext); margin: 0 0 24px; }
-.stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0 28px;
-  padding: 0;
-  list-style: none;
-}
-.stats li {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 14px;
-}
-.stats b { color: var(--primary); font-size: 18px; display: block; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
 .actions a {
   display: inline-block;
