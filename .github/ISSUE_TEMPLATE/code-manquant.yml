@@ -67,7 +67,7 @@ body:
     id: teste
     attributes:
       label: Vous l'avez composé vous-même sur votre téléphone ?
-      description: Un code jamais testé reste utile — il sera simplement marqué « non vérifié » en attendant.
+      description: Un code jamais testé reste utile. Il sera simplement marqué « non vérifié » en attendant.
       options:
         - "Oui, il marche"
         - "Non, je le connais mais je ne l'ai pas testé récemment"
@@ -79,5 +79,5 @@ body:
       label: Autres codes (facultatif)
       description: Un code par ligne, avec ce qu'il fait. Même ceux dont vous n'êtes pas sûr.
       placeholder: |
-        *141# — connaître son numéro
-        *121# — emprunter du crédit
+        *141# : connaître son numéro
+        *121# : emprunter du crédit

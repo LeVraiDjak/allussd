@@ -11,7 +11,7 @@ body:
         de retirer la mention pour tout le monde.
 
         Un rappel avant de commencer : **cette page est publique**. N'y mettez pas votre numéro de
-        téléphone ni quoi que ce soit de personnel — le pays, l'opérateur et le code suffisent.
+        téléphone ni quoi que ce soit de personnel. Le pays, l'opérateur et le code suffisent.
 
         Un code qui coûte de l'argent (achat de forfait, transfert) : **arrêtez-vous au premier écran**,
         n'allez pas jusqu'à la validation. Voir le premier écran suffit à confirmer que le code ouvre le
@@ -56,8 +56,8 @@ body:
     attributes:
       label: Qu'avez-vous obtenu ?
       options:
-        - "A — Le menu ou l'information annoncée s'affiche"
-        - "A — Ça marche, mais le nom ou la description mériterait d'être précisé (dites-le en dessous)"
+        - "A. Le menu ou l'information annoncée s'affiche"
+        - "A. Ça marche, mais le nom ou la description mériterait d'être précisé (dites-le en dessous)"
     validations:
       required: true
   - type: textarea
@@ -79,5 +79,5 @@ body:
       value: |
         **Ce qui se passe ensuite** : la mention « non vérifié » est retirée quand **deux confirmations
         indépendantes** arrivent, ou quand une confirmation rejoint une source officielle de l'opérateur.
-        Une seule personne, une seule fois, ne suffit pas — c'est la même règle qui empêche de retirer un
+        Une seule personne, une seule fois, ne suffit pas : c'est la même règle qui empêche de retirer un
         code sur un seul signalement d'échec.
