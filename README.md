@@ -1,6 +1,6 @@
 # All USSD
 
-**<https://levraidjak.github.io/allussd/>** — [English](https://levraidjak.github.io/allussd/en/)
+**<https://levraidjak.github.io/allussd/>** · [English](https://levraidjak.github.io/allussd/en/)
 
 Application Android qui rassemble les codes USSD/MMI et les codes opérateurs par pays, avec composition
 en un tap. Fonctionne hors-ligne, sans compte.
@@ -20,7 +20,7 @@ fiable partout. Les retours de personnes sur place sont ce qui rend l'applicatio
 Sans compte GitHub : <levraidev@gmail.com>.
 
 ⚠️ Les signalements sont **publics**. N'y mettez pas votre numéro de téléphone ni quoi que ce soit de
-personnel — le pays, l'opérateur (ou le service) et le code (ou le numéro) suffisent.
+personnel. Le pays, l'opérateur (ou le service) et le code (ou le numéro) suffisent.
 
 ## Politique de confidentialité
 
