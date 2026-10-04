@@ -77,7 +77,6 @@ body:
   - type: markdown
     attributes:
       value: |
-        **Ce qui se passe ensuite** : la mention « non vérifié » est retirée quand **deux confirmations
-        indépendantes** arrivent, ou quand une confirmation rejoint une source officielle de l'opérateur.
-        Une seule personne, une seule fois, ne suffit pas : c'est la même règle qui empêche de retirer un
-        code sur un seul signalement d'échec.
+        **Ce qui se passe ensuite** : la mention « non vérifié » est retirée dès qu'**une confirmation**
+        arrive. Un seul signalement d'échec, lui, ne suffit pas à retirer un code : un échec peut venir
+        du réseau.
