@@ -10,6 +10,10 @@ body:
 
         Rappel : **cette page est publique**, ne mettez pas votre numéro de téléphone.
         Vous pouvez proposer plusieurs codes d'un coup dans le champ « Autres codes » en bas.
+
+        **Rien n'est publié automatiquement.** Chaque proposition est relue puis composée avant d'entrer
+        dans l'application, où elle porte la mention « non vérifié » tant que personne ne l'a confirmée.
+        Les codes qui effacent le téléphone ou détournent des appels ou de l'argent sont refusés.
   - type: input
     id: pays
     attributes:
@@ -73,6 +77,20 @@ body:
         - "Non, je le connais mais je ne l'ai pas testé récemment"
     validations:
       required: true
+  - type: textarea
+    id: ecran
+    attributes:
+      label: Ce qui s'affiche à l'écran (facultatif)
+      description: Le message ou le menu reçu après avoir composé le code, recopié tel quel. Ça permet de vérifier la proposition.
+      placeholder: "1. Solde  2. Forfaits  3. Transfert"
+  - type: dropdown
+    id: cout
+    attributes:
+      label: Faut-il du crédit pour l'utiliser ? (facultatif)
+      options:
+        - "Non, gratuit"
+        - "Oui, il faut du crédit d'appel ou le code est payant"
+        - "Je ne sais pas"
   - type: textarea
     id: autres
     attributes:
