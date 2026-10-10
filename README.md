@@ -32,3 +32,4 @@ personnel. Le pays, l'opérateur (ou le service) et le code (ou le numéro) suff
 ---
 
 All USSD est une application indépendante, non affiliée aux opérateurs télécoms cités.
+© 2026 LeVrai Dev. Contenu et descriptions protégés, reproduction interdite.
