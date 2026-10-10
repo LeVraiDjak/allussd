@@ -5,6 +5,8 @@
 Application Android qui rassemble les codes USSD/MMI et les codes opérateurs par pays, avec composition
 en un tap. Fonctionne hors-ligne, sans compte.
 
+**[Télécharger sur Google Play](https://play.google.com/store/apps/details?id=com.levraidjak.allussd)**
+
 Ce dépôt sert au site de l'application et au signalement des codes et numéros d'urgence.
 
 ## Signaler un code ou un numéro d'urgence
