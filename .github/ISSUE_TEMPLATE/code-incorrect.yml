@@ -80,3 +80,5 @@ body:
       label: Identifiant du code (facultatif)
       description: Affiché en bas de la fiche du code dans l'application.
       placeholder: ci.orange.call-me-back
+assignees:
+  - LeVraiDjak
