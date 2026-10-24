@@ -80,3 +80,5 @@ body:
         **Ce qui se passe ensuite** : la mention « non vérifié » est retirée dès qu'**une confirmation**
         arrive. Un seul signalement d'échec, lui, ne suffit pas à retirer un code : un échec peut venir
         du réseau.
+assignees:
+  - LeVraiDjak
