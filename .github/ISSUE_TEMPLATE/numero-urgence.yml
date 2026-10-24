@@ -67,3 +67,5 @@ body:
     attributes:
       label: Détail (facultatif)
       description: Tout ce qui peut aider, comme une capture d'écran, du contexte ou un lien vers une source.
+assignees:
+  - LeVraiDjak
